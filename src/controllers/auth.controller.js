@@ -4,8 +4,6 @@ export const login = (req,res) => {
     const {email ,password} = req.body;
 
     if (email=="x@x.com" && password == "1234!"){
-        // "S3cr3t!" es la clave para validar el token en jwt.io
-        // despues de enviar datos en el body para autentificar
         const token= jwt.sign( {email} ,process.env.SECRET,{
             expiresIn: "1year",
         })
